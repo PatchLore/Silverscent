@@ -8,7 +8,9 @@ export default function Home() {
       {/* Hero */}
       <div className="bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-600 py-28 text-center">
         <h1 className="text-7xl font-bold tracking-tighter mb-4">Digital Dreams Studio</h1>
-        <p className="text-3xl mb-10">AI Art Packs • Music Packs • Custom Commissions</p>
+        <p className="text-2xl mb-3">Royalty-free AI-generated music & art packs designed for modern content creators.</p>
+        <p className="text-xl text-zinc-200 mb-8">Commercial license included. No attribution required.</p>
+        <a href="/license" className="text-pink-300 hover:text-pink-200 underline mb-10 inline-block">Read Licensing Terms →</a>
         <div className="flex justify-center gap-6">
           <Link
             href="/shop"

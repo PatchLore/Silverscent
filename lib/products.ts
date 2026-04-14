@@ -7,6 +7,8 @@ export type Product = {
   images: string[];
   files: number;
   checkoutUrl: string;
+  aiDisclosure?: string;
+  licenseBadgeText?: string;
 };
 
 export const products: Product[] = [

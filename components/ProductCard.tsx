@@ -42,6 +42,13 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
       <div className="p-6">
+        <a 
+          href="/license" 
+          target="_blank"
+          className="inline-block text-xs bg-pink-500/10 text-pink-400 px-3 py-1 rounded-md mb-3 hover:underline transition"
+        >
+          AI-Assisted • Commercial License Included
+        </a>
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-bold text-xl">{product.title}</h3>
           <span className="text-3xl font-bold text-pink-400">${product.price}</span>
