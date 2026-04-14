@@ -8,9 +8,21 @@ import { ShoppingCart } from "lucide-react";
 
 export default function ProductCard({ product }: { product: Product }) {
   const addToCart = useCartStore((state) => state.addItem);
+  
+  const genre = product.title.split(' ').slice(-2, -1)[0];
+  const getGenreBorderColor = () => {
+    switch(genre) {
+      case 'Bass': return 'border-indigo-500 hover:border-indigo-400';
+      case 'Chill': return 'border-amber-500 hover:border-amber-400';
+      case 'Ambient': return 'border-emerald-500 hover:border-emerald-400';
+      case 'Retrowave': return 'border-fuchsia-500 hover:border-fuchsia-400';
+      case 'Hip-Hop': return 'border-red-500 hover:border-red-400';
+      default: return 'border-zinc-800 hover:border-pink-500';
+    }
+  };
 
   return (
-    <div className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-pink-500 transition-all group">
+    <div className={`bg-zinc-900 rounded-3xl overflow-hidden border-2 transition-all group ${getGenreBorderColor()}`}>
       <div className="relative">
         <Image
           src={product.images[0]}
@@ -19,8 +31,14 @@ export default function ProductCard({ product }: { product: Product }) {
           height={400}
           className="w-full aspect-square object-cover group-hover:scale-105 transition-transform"
         />
+        <div className="absolute top-4 left-4 bg-black/70 text-white text-xs px-3 py-1 rounded-full font-medium">
+          {product.title.split(' ').slice(-2, -1)[0]}
+        </div>
         <div className="absolute top-4 right-4 bg-black/70 text-white text-xs px-3 py-1 rounded-full">
           {product.files} files
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm py-2 px-4 text-center text-xs text-white">
+          🎧 Audio Preview Coming Soon
         </div>
       </div>
       <div className="p-6">

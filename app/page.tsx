@@ -26,9 +26,10 @@ export default function Home() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-5xl font-bold mb-10">Featured Products</h2>
+        <h2 className="text-5xl font-bold mb-2">Royalty-Free Music Packs</h2>
+        <p className="text-zinc-400 text-xl mb-10">by Genre • Instant download • Commercial license included</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.filter(p => p.category !== "custom").map((product) => (
+          {products.filter(p => p.category === "music").map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
